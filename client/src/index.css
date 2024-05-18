@@ -24,6 +24,7 @@ body {
   background-blend-mode: overlay;
   background-size: cover;
   color: var(--color-white);
+  overflow: hidden;
 }
 
 ::selection {
@@ -47,9 +48,12 @@ body {
 .header {
   height: 15vh;
   width: 100%;
+
   display: flex;
   align-items: center;
+  
   position: fixed;
+  top: 0;
 }
 
 .nav {
@@ -100,6 +104,11 @@ body {
     color: var(--color-gold);
 }
 
+.splash-title {
+    position: relative;
+    z-index: 100;
+}
+
 .splash-sub-title {
   text-align: center;
   margin-bottom: 15px;
@@ -107,7 +116,6 @@ body {
   & > * {
       transition: all .3s;
   }
-
 }
 
 .splash-explore {
@@ -142,15 +150,27 @@ body {
   top: 0;
   left: -58px;
   transition: all 1s;
+  animation: rotate 90s linear infinite;
   transform: translate(-50%, -50%) rotate(0) scale(1);
+  z-index: 0;
+}
 
-  &:hover {
-    transform: translate(-50%, -50%) rotate(25deg) scale(1.1);
-  }
+@keyframes rotate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) rotate(180deg) scale(1);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg) scale(1);
+    }
 }
 
 .splash-title-hover {
-    transition: all 1s;
+    transition: all .5s ease-out;
 
     &:hover {
         color: var(--color-gold);
@@ -161,9 +181,9 @@ body {
     color: #fff !important;
 }
 
-/************* MEDIA QUERIES ***********************/
+/************* SPLASH MEDIA QUERIES ***********************/
 
-@media only screen and (max-width: 1000px)  {
+@media screen and (max-width: 1000px)  {
     .heading-primary {
         font-size: 35px;
     }
@@ -173,7 +193,7 @@ body {
     }
 }
 
-@media only screen and (max-width: 700px)  {
+@media screen and (max-width: 700px)  {
     .heading-primary {
         font-size: 30px;
     }
@@ -187,22 +207,30 @@ body {
     }
 
     .splash-moon {
-        top: 300px;
+        top: 500px;
         left: 50%;
-        transform: translate(-50%, -50%) rotate(150deg) scale(2);
-
-        &:hover {
-        transform: translate(-50%, -50%) rotate(150deg) scale(2);
-
-        }
     }
 
     .nav-list__link {
         font-size: 100%;
     }
+
+    @keyframes rotate {
+        0% {
+            transform: translate(-50%, -50%) rotate(0) scale(.75);
+        }
+    
+        50% {
+            transform: translate(-50%, -50%) rotate(180deg) scale(.75);
+        }
+    
+        100% {
+            transform: translate(-50%, -50%) rotate(360deg) scale(.75);
+        }
+    }
 }
 
-@media only screen and (max-width: 400px)  {
+@media screen and (max-width: 400px)  {
     .heading-primary {
         font-size: 25px;
     }
@@ -212,4 +240,43 @@ body {
     }
 }
 
+/****************** HOME *********************/
 
+.home-main {
+    margin-top: 15vh;
+    height: 85vh;
+}
+
+.home-container {
+    max-width: 1400px;
+    margin: 0 auto;
+
+    display: grid;
+    gap: 20px;
+
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 4fr 2fr;
+    grid-template-areas: 
+        "filters view"
+        "filters view"
+        "map map"
+    ;
+}
+
+.home-grid-space {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(159, 159, 159, 0.288);
+}
+
+.home-filters {
+    grid-area: filters;
+}
+
+.home-view {
+    grid-area: view;
+}
+
+.home-map {
+    grid-area: map;
+}
