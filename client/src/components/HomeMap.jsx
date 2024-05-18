@@ -22,11 +22,10 @@ function HomeMap(props) {
 
   const onLoad = (map) => {
     const bounds = new window.google.maps.LatLngBounds(center);
-    console.log("map", map);
     map.fitBounds(bounds);
   };
 
-  const containerStyle = { height: 200, width: "100%" };
+  const containerStyle = { height: 500, width: "100%" };
   //#endregion
 
   return (
