@@ -257,16 +257,13 @@ body {
 
 .home-container {
     max-width: 1400px;
-    margin: 0 auto;
-    height: 100%;
-
-    
+    margin: 0 auto;  
 
     display: grid;
     gap: 20px;
 
     grid-template-columns: 1fr 3fr;
-    grid-template-rows: 1fr 4fr 2fr;
+    grid-template-rows: 1fr 3fr 4fr;
     grid-template-areas: 
         "filters view"
         "filters view"
@@ -300,7 +297,7 @@ body {
 
 .home-map {
     grid-area: map;
-    max-height: 400px;
+    margin-bottom: 20px;
 }
 
 @media screen and (max-width: 1500px) {
@@ -332,7 +329,8 @@ body {
         gap: 10px;
     
         grid-template-columns: 1fr 3fr;
-        grid-template-rows: 1fr 4fr 2fr;
+        grid-template-rows: 1fr 3fr 4fr;
+
         grid-template-areas: 
             "filters view"
             "filters view"
@@ -353,7 +351,7 @@ body {
         gap: 10px;
     
         grid-template-columns: 1fr 3fr;
-        grid-template-rows: 1fr 4fr 2fr;
+        grid-template-rows: 1fr 3fr 4fr;
         grid-template-areas: 
             "filters filters"
             "view view"

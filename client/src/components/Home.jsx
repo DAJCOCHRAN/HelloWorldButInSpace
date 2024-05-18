@@ -22,8 +22,6 @@ function Home() {
       lng: response.coords.longitude,
     };
 
-    console.log(coords);
-
     setCenter(coords);
   };
 
@@ -37,8 +35,8 @@ function Home() {
       <main className="home-main">
         <div className="home-container">
           <HomeFilters></HomeFilters>
-          <HomeView></HomeView>
-          <HomeMap center={center}></HomeMap>
+          {center && <HomeView location={center}></HomeView>}
+          <HomeMap center={center} setCenter={setCenter}></HomeMap>
         </div>
       </main>
     </>
