@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+:root {
+    --font-primary: "Roboto Mono", monospace;
+    --font-secondary: "Paytone One", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: rgb(17, 17, 17);
+    color: #f1f1f1
+}
+
+/**************** NAVIGATION ******************/
+
+.header {
+    height: 100px;
+    background-color: green;
+    display: flex;
+    align-items: center;
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+}
+
+.nav-links {
+    display: flex;
+    width: 100%;
+    padding: 0 350px;
+    margin: auto;
+    justify-content: space-between;    
+}
+
+@media only screen and (max-width: 400px) {
+    .nav-links {
+        padding: 300px;
+    }
+}
+
+.nav__link {
+    list-style: none;
+}
+
