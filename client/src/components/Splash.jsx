@@ -1,4 +1,27 @@
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 function Splash() {
+  const [viewPortWidth, setViewPortWidth] = useState(window.innerWidth);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
+
+  function handleWindowResize() {
+    setViewPortWidth(window.innerWidth);
+  }
+
+  const onEnterClick = () => {
+    navigate("/home");
+  };
+
   return (
     <>
       <main className="splash-main">
@@ -33,12 +56,17 @@ function Splash() {
             <h3 className="heading-tertiary">Space Exploration from Earth</h3>
           </div>
           <div className="splash-explore">
-            <button type="button" className="splash-btn">
+            <button onClick={onEnterClick} type="button" className="splash-btn">
               Enter
             </button>
           </div>
           <div className="splash-moon">
-            <img src="src/public/images/moon-sm.png" alt="moon" />
+            <img
+              src={
+                viewPortWidth > 700 ? `/images/moon-sm.png` : `/images/moon.png`
+              }
+              alt="moon"
+            />
           </div>
         </div>
       </main>
