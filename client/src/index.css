@@ -6,7 +6,10 @@
   --font-secondary: "Paytone One", sans-serif;
 
   --color-white: #e8e8e8;
+  --color-black: #212121;
   --color-gold: rgb(220, 220, 16);
+  --color-gray-lt:  rgb(175, 175, 175);
+  --color-gray-dk:  rgb(136, 136, 136);
 }
 
 *,
@@ -39,6 +42,12 @@ body {
 
 .heading-tertiary {
   font-family: var(--font-primary);
+  font-size: 20px;
+}
+
+.heading-secondary {
+  font-family: var(--font-secondary);
+  letter-spacing: 1px;
   font-size: 20px;
 }
 
@@ -275,8 +284,18 @@ body {
     grid-area: filters;
 }
 
+.home-filters__title {
+    margin-bottom: 20px;
+
+}
+
 .home-view {
     grid-area: view;
+    overflow: hidden;
+}
+
+.home-view__title {
+    margin-bottom: 20px;
 }
 
 .home-map {
@@ -341,5 +360,15 @@ body {
             "map map"
         ;
     }
-
 }
+
+/************ CARDS *********************/
+
+.card {
+    background-image: linear-gradient(to top, var(--color-gray-dk) , var(--color-gray-lt));
+    color: var(--color-black);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+
