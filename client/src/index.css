@@ -1,54 +1,123 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Paytone+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Paytone+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
 
 :root {
-    --font-primary: "Roboto Mono", monospace;
-    --font-secondary: "Paytone One", sans-serif;
+  --font-primary: "Roboto Mono", monospace;
+  --font-secondary: "Paytone One", sans-serif;
+
+  --color-white: #e8e8e8;
 }
 
 *,
 *::after,
 *::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: var(--font-primary);
-    background-color: rgb(17, 17, 17);
-    color: #f1f1f1
+  font-family: var(--font-primary);
+  background-color: rgba(17, 17, 17, 0.6);
+  background-image: url(./public/images/space-bg.jpg);
+  background-blend-mode: overlay;
+  background-size: cover;
+  color: var(--color-white);
+}
+
+/************** TYPOGRAPHY ***********************/
+
+.heading-primary {
+  font-family: var(--font-secondary);
+  font-size: 50px;
+}
+
+.heading-tertiary {
+  font-family: var(--font-primary);
 }
 
 /**************** NAVIGATION ******************/
 
 .header {
-    height: 100px;
-    background-color: green;
-    display: flex;
-    align-items: center;
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: fixed;
 }
 
 .nav {
-    width: 100%;
-    display: flex;
+  width: 100%;
+  display: flex;
+  padding: 40px;
 }
 
-.nav-links {
-    display: flex;
-    width: 100%;
-    padding: 0 350px;
-    margin: auto;
-    justify-content: space-between;    
+.nav-list {
+  display: flex;
+  width: 100%;
+  margin: auto;
+  max-width: 500px;
+  justify-content: space-between;
 }
 
-@media only screen and (max-width: 400px) {
-    .nav-links {
-        padding: 300px;
-    }
+.nav-list__item {
+  list-style: none;
 }
 
-.nav__link {
-    list-style: none;
+.nav-list__link {
+  color: var(--color-white);
+  text-decoration: none;
+  transition: all 0.3s;
+
+  &:hover {
+    color: #fff;
+  }
 }
 
+/***************** SPLASH *****************/
+
+.splash-main {
+  display: flex;
+  height: 85vh;
+}
+
+.splash {
+  margin: auto;
+  min-height: 175px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transform: translateY(80px);
+  position: relative;
+}
+
+.splash-sub-title {
+  text-align: center;
+}
+
+.splash-explore {
+  text-align: center;
+}
+
+.splash-btn {
+  padding: 15px;
+  border: none;
+  border-radius: 4px;
+  min-width: 150px;
+  font-family: inherit;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  background-color: var(--color-white);
+
+  &:hover {
+    background-color: #fff;
+  }
+}
+
+.splash-moon {
+  position: absolute;
+  top: -65px;
+  left: -140px;
+}

@@ -5,18 +5,18 @@ function NavBar() {
     <>
       <header className="header">
         <nav className="nav">
-          <ul className="nav-links">
-            <li className="nav__link bg-danger">
-              <Link>Home</Link>
+          <ul className="nav-list">
+            <li className="nav-list__item">
+              <Link className="nav-list__link">Home</Link>
             </li>
-            <li className="nav__link">
-              <Link>Menu</Link>
+            <li className="nav-list__item">
+              <Link className="nav-list__link">Menu</Link>
             </li>
-            <li className="nav__link">
-              <Link>About</Link>
+            <li className="nav-list__item">
+              <Link className="nav-list__link">About</Link>
             </li>
-            <li className="nav__link">
-              <Link>Contact</Link>
+            <li className="nav-list__item">
+              <Link className="nav-list__link">Contact</Link>
             </li>
           </ul>
         </nav>

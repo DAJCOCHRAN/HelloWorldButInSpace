@@ -1,6 +1,6 @@
 import { Routes, BrowserRouter as Router, Route } from "react-router-dom";
-import { Home } from "./Home";
 import { NavBar } from "./components/NavBar";
+import { Splash } from "./components/Splash";
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
       <Router>
         <NavBar></NavBar>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/" element={<Splash />}></Route>
         </Routes>
       </Router>
     </>
