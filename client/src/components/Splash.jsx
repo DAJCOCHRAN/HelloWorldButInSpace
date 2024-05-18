@@ -63,9 +63,7 @@ function Splash() {
           <div className="splash-moon">
             <img
               src={
-                viewPortWidth > 700
-                  ? `public/images/moon-sm.png`
-                  : `public/images/moon.png`
+                viewPortWidth > 700 ? `/images/moon-sm.png` : `/images/moon.png`
               }
               alt="moon"
             />

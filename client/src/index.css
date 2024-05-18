@@ -24,7 +24,6 @@ body {
   background-blend-mode: overlay;
   background-size: cover;
   color: var(--color-white);
-  overflow: hidden;
 }
 
 ::selection {
@@ -52,8 +51,7 @@ body {
   display: flex;
   align-items: center;
   
-  position: fixed;
-  top: 0;
+
 }
 
 .nav {
@@ -90,14 +88,15 @@ body {
 .splash-main {
   display: flex;
   height: 85vh;
+  overflow: hidden;
 }
 
 .splash {
   margin: auto;
   min-height: 175px;
 
-  transform: translateY(80px);
   position: relative;
+  top: -100px;
 }
 
 .splash-emphasis {
@@ -243,13 +242,16 @@ body {
 /****************** HOME *********************/
 
 .home-main {
-    margin-top: 15vh;
     height: 85vh;
+    padding: 0 0 20px 0;
 }
 
 .home-container {
     max-width: 1400px;
     margin: 0 auto;
+    height: 100%;
+
+    
 
     display: grid;
     gap: 20px;
@@ -279,4 +281,65 @@ body {
 
 .home-map {
     grid-area: map;
+    max-height: 400px;
+}
+
+@media screen and (max-width: 1500px) {
+    .home-container {
+        max-width: 1200px;
+    }
+}
+
+
+@media screen and (max-width: 1300px) {
+    .home-container {
+        max-width: 1000px;
+    }
+}
+
+
+@media screen and (max-width: 1100px) {
+    .home-container {
+        max-width: 800px;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    .home-container {
+        width: 100%;
+        padding: 0 20px;
+    
+        gap: 10px;
+    
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: 1fr 4fr 2fr;
+        grid-template-areas: 
+            "filters view"
+            "filters view"
+            "map map"
+        ;
+    }
+
+    .home-grid-space {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .home-container {
+        width: 100%;
+        padding: 0 5px;
+    
+        gap: 10px;
+    
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: 1fr 4fr 2fr;
+        grid-template-areas: 
+            "filters filters"
+            "view view"
+            "map map"
+        ;
+    }
+
 }

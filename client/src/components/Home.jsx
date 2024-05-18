@@ -1,26 +1,34 @@
-import { useEffect } from "react";
-import * as issService from "../services/issService";
+import { useEffect, useState } from "react";
+import { HomeFilters } from "./HomeFilters";
+import { HomeView } from "./HomeView";
+import { HomeMap } from "./HomeMap";
 
 function Home() {
+  const [center, setCenter] = useState(null);
+
   useEffect(() => {
-    getIssCurrentLocation();
+    navigator.geolocation.getCurrentPosition(
+      onGetLocationSuccess,
+      onGetLocationError
+    );
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  //#region ISS CURRENT LOCATION
-  const getIssCurrentLocation = () => {
-    issService
-      .currentLocation()
-      .then(onGetIssLocationSuccess)
-      .catch(onGetIssLocationError);
+  //#region GET LOCATION HANDLERS
+  const onGetLocationSuccess = (response) => {
+    const coords = {
+      lat: response.coords.latitude,
+      lng: response.coords.longitude,
+    };
+
+    console.log(coords);
+
+    setCenter(coords);
   };
 
-  const onGetIssLocationSuccess = (response) => {
-    console.log(response);
-  };
-
-  const onGetIssLocationError = (error) => {
-    console.error(error);
+  const onGetLocationError = (error) => {
+    console.log("onGetLocationError", error);
   };
   //#endregion
 
@@ -28,16 +36,9 @@ function Home() {
     <>
       <main className="home-main">
         <div className="home-container">
-          <div className="home-grid-space home-filters">
-            <div className="home-filters__title">FILTERS</div>
-            <div className="home-filters__body">Checkboxes, inputs</div>
-          </div>
-
-          <div className="home-grid-space home-view">
-            <div className="home-view__title">TITLE GOES HERE</div>
-            <div className="home-view__body">Api response cards</div>
-          </div>
-          <div className="home-grid-space home-map">GOOGLE MAPS, selector</div>
+          <HomeFilters></HomeFilters>
+          <HomeView></HomeView>
+          <HomeMap center={center}></HomeMap>
         </div>
       </main>
     </>
