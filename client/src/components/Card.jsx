@@ -1,4 +1,36 @@
+import React, { useEffect, useState } from 'react';
+
 function Card() {
+  const [data, setData] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const dataFetch = async () => {
+            try {
+                const response = await fetch('http://localhost:8000/iss');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+                setData(data);
+                setLoading(false);
+            } catch (error) {
+                setError(error);
+                setLoading(false);
+            }
+        };
+
+        dataFetch();
+    }, []);
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    if (error) {
+        return <div>Error: {error.message}</div>;
+    }
   return (
     <div className="card">
       <div className="card__title">
@@ -6,7 +38,7 @@ function Card() {
       </div>
       <div className="card__body">
         <p className="card__body--text">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse
+          {data.latitude}
         </p>
       </div>
       <div className="card__footer">
