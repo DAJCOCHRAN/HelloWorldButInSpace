@@ -6,6 +6,7 @@
   --font-secondary: "Paytone One", sans-serif;
 
   --color-white: #e8e8e8;
+  --color-gold: rgb(220, 220, 16);
 }
 
 *,
@@ -25,6 +26,10 @@ body {
   color: var(--color-white);
 }
 
+::selection {
+    background-color: gray;
+}
+
 /************** TYPOGRAPHY ***********************/
 
 .heading-primary {
@@ -34,6 +39,7 @@ body {
 
 .heading-tertiary {
   font-family: var(--font-primary);
+  font-size: 20px;
 }
 
 /**************** NAVIGATION ******************/
@@ -67,6 +73,7 @@ body {
 .nav-list__link {
   color: var(--color-white);
   text-decoration: none;
+  font-size: calc(125%);
   transition: all 0.3s;
 
   &:hover {
@@ -84,16 +91,23 @@ body {
 .splash {
   margin: auto;
   min-height: 175px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 
   transform: translateY(80px);
   position: relative;
 }
 
+.splash-emphasis {
+    color: var(--color-gold);
+}
+
 .splash-sub-title {
   text-align: center;
+  margin-bottom: 15px;
+  
+  & > * {
+      transition: all .3s;
+  }
+
 }
 
 .splash-explore {
@@ -105,19 +119,97 @@ body {
   border: none;
   border-radius: 4px;
   min-width: 150px;
-  font-family: inherit;
+  font-family: var(--font-secondary);
+  font-weight: 800;
   transition: all 0.3s;
   cursor: pointer;
 
+  transform: translateY(0) scale(1);
   background-color: var(--color-white);
 
   &:hover {
     background-color: #fff;
+    transform: translateY(-2px) scale(1.01);
+  }
+
+    &:active {  
+      transform: translateY(-1px) scale(1.01);
   }
 }
 
 .splash-moon {
   position: absolute;
-  top: -65px;
-  left: -140px;
+  top: 0;
+  left: -58px;
+  transition: all 1s;
+  transform: translate(-50%, -50%) rotate(0) scale(1);
+
+  &:hover {
+    transform: translate(-50%, -50%) rotate(25deg) scale(1.1);
+  }
 }
+
+.splash-title-hover {
+    transition: all 1s;
+
+    &:hover {
+        color: var(--color-gold);
+    }
+}
+
+.splash-emphasis .splash-title-hover:hover {
+    color: #fff !important;
+}
+
+/************* MEDIA QUERIES ***********************/
+
+@media only screen and (max-width: 1000px)  {
+    .heading-primary {
+        font-size: 35px;
+    }
+
+    .heading-tertiary {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 700px)  {
+    .heading-primary {
+        font-size: 30px;
+    }
+
+    .heading-tertiary {
+        font-size: 15px;
+    }
+
+    .splash {
+        top: -100px
+    }
+
+    .splash-moon {
+        top: 300px;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(150deg) scale(2);
+
+        &:hover {
+        transform: translate(-50%, -50%) rotate(150deg) scale(2);
+
+        }
+    }
+
+    .nav-list__link {
+        font-size: 100%;
+    }
+}
+
+@media only screen and (max-width: 400px)  {
+    .heading-primary {
+        font-size: 25px;
+    }
+
+    .heading-tertiary {
+        font-size: 13px;
+    }
+}
+
+
