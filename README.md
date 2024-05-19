@@ -12,6 +12,10 @@ This project consists of two main components: the client and the server. The cli
 - [Server](#server)
   - [Setup](#setup-1)
   - [Usage](#usage-1)
+- [API Integration](#api-integration)
+  - [Used APIs](#used-apis)
+  - [Integration Details](#integration-details)
+  - [Examples](#examples)
 - [Contributors](#contributors)
 
  
@@ -74,6 +78,8 @@ To start the server, run the start script:
 ```javascript
 nodemon index.js
 ```
+
+## API Integration
 
 ## Contributors
 - **Donald Cochran**
