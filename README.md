@@ -79,7 +79,8 @@ nodemon index.js
 - **Donald Cochran**
 - **Benjamin Marin**
 - **Giselle Ross:**
-  - Github: https://github.com/giselleRoss
+  - Github: [giselleRoss](https://github.com/giselleRoss)
+  - Linkedin: [Giselle Ross](https://linkedin.com/in/gisellerosstech)
 - **Alex Amador**
 - **Jeffrey Fung**
 
