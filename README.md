@@ -8,12 +8,12 @@ This project consists of two main components: the client and the server. The cli
 - [Technologies Used](#technologies-used)
 - [Client](#client)
   - [Setup](#setup)
-  - [Scripts](#scripts)
-  - [Dependencies](#dependencies)
+  - [Usage](#usage)
 - [Server](#server)
   - [Setup](#setup-1)
-  - [Scripts](#scripts-1)
-  - [Dependencies](#dependencies-1)
+  - [Usage](#usage-1)
+- [Contributors](#contributors)
+
  
 ## Technologies Used
 - **Client:**
@@ -75,5 +75,12 @@ To start the server, run the start script:
 nodemon index.js
 ```
 
+## Contributors
+- **Donald Cochran**
+- **Benjamin Marin**
+- **Giselle Ross:**
+  - Github: https://github.com/giselleRoss
+- **Alex Amador**
+- **Jeffrey Fung**
 
 
