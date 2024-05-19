@@ -83,5 +83,7 @@ nodemon index.js
   - Linkedin: [Giselle Ross](https://linkedin.com/in/gisellerosstech)
 - **Alex Amador**
 - **Jeffrey Fung**
+  - Github: [Jeffcodess](https://github.com/Jeffcodess)
+  - Linkedin: [Jeffrey Fung](https://www.linkedin.com/in/jeffrey-fung-678438bb/)
 
 
