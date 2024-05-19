@@ -81,6 +81,91 @@ nodemon index.js
 
 ## API Integration
 
+### Used APIs
+We used the following APIs in our project:
+
+- WhereTheISSAt API: For fetching data about space objects and their locations.
+- OpenWeatherMap API: For providing weather information relevant to stargazing sessions.
+- React Google Maps API: For displaying maps and marking locations of space objects.
+
+### Integration Details
+- **WhereTheISSAtAPI**
+  - Base URL: [https://wheretheiss.at/](https://wheretheiss.at/ )
+  - Endpoints:
+    - /v1/satellites:  Common Name and NORAD Catalog Id
+    - /v1/satellites/[id]: Position, Velocity, and Other Related Information for a Given Point in Time
+- **GoogleMaps API**
+  - Purpose: Used to display maps and space object locations in the application.
+  - Integration: We utilized the @react-google-maps/api package to embed Google Maps in our React application.
+  - Authentication: Requires an API key. You can obtain one by registering on Google Maps for Developers
+- **OpenWeatherMap API**
+  - Base URL: https://api.openweathermap.org/
+  - Endpoints:
+    - /data/3.0/onecall/onecall?lat=33.44&lon=-94.04&appid={API key}: Current weather data for any location
+   
+### Example Usage
+- **WhereTheISSAtAPI**
+```javascript
+import axios from 'axios';
+
+const endpoint = 'https://api.wheretheiss.at/v1/satellites/25544/';
+
+const issCurrentLocation = async () => {
+  try {
+    const response = await axios.get(endpoint, {
+      crossdomain: true,
+      headers: { 'Content-Type': 'application/json' },
+    });
+    console.log(response.data);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching ISS location:', error);
+    return null;
+  }
+};
+
+export { issCurrentLocation };
+```
+- **OpenWeatherMap API**
+```javascript
+import axios from 'axios';
+
+const fetchWeather = async (location) => {
+  try {
+    const response = await axios.get('https://api.openweathermap.org/data/2.5/weather', {
+      params: { q: location, appid: 'YOUR_OPENWEATHERMAP_API_KEY' }
+    });
+    console.log(response.data);
+  } catch (error) {
+    console.error('Error fetching weather data:', error);
+  }
+};
+
+fetchWeather('Los Angeles');
+```
+- **GoogleMaps API**
+
+```javascript
+import React from 'react';
+import { GoogleMap, useJsApiLoader, MarkerF } from '@react-google-maps/api';
+
+function HomeMap({ center }) {
+  const { isLoaded } = useJsApiLoader({
+    googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
+  });
+
+  const containerStyle = { height: '500px', width: '100%' };
+
+  return isLoaded ? (
+    <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={8}>
+      <MarkerF position={center} />
+    </GoogleMap>
+  ) : null;
+}
+
+export { HomeMap };
+```
+
 ## Contributors
 - **Donald Cochran**
   - GitHub: [DAJCOCHRAN](https://github.com/DAJCOCHRAN)
