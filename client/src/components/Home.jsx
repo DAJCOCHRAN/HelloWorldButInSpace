@@ -5,6 +5,9 @@ import { HomeMap } from "./HomeMap";
 
 function Home() {
   const [center, setCenter] = useState(null);
+  const [filters, setFilters] = useState({
+    test: false,
+  });
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -17,6 +20,8 @@ function Home() {
 
   //#region GET LOCATION HANDLERS
   const onGetLocationSuccess = (response) => {
+    console.log("onGetLocationSuccess", response);
+
     const coords = {
       lat: response.coords.latitude,
       lng: response.coords.longitude,
@@ -34,8 +39,12 @@ function Home() {
     <>
       <main className="home-main">
         <div className="home-container">
-          <HomeFilters></HomeFilters>
-          {center && <HomeView location={center}></HomeView>}
+          <HomeFilters filters={filters} setFilters={setFilters}></HomeFilters>
+          {center ? (
+            <HomeView filters={filters} location={center}></HomeView>
+          ) : (
+            "Loading..."
+          )}
           <HomeMap center={center} setCenter={setCenter}></HomeMap>
         </div>
       </main>
