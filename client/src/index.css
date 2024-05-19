@@ -300,6 +300,18 @@ body {
     margin-bottom: 20px;
 }
 
+.home-moon-large {
+    position: absolute;
+    top: 60%;
+    right: -40%;
+    z-index: -50;
+    filter: brightness(0.1);
+
+    animation: rotate 90s linear infinite;
+
+    transform: translate(-50%, -50%);
+}
+
 @media screen and (max-width: 1500px) {
     .home-container {
         max-width: 1200px;
@@ -367,6 +379,12 @@ body {
     color: var(--color-black);
     border-radius: 10px;
     padding: 15px;
+}
+
+/************* HOME FILTER *****************/
+
+.filter-list-item {
+    list-style-type: none;
 }
 
 
