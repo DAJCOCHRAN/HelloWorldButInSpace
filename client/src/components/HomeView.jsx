@@ -111,7 +111,6 @@ function HomeView(props) {
         <h2 className="heading-secondary">Happening in Space near me:</h2>
       </div>
       <div className="home-view__body">{cardData.components}</div>
-      <img src="images/moon.png" alt="moon" className="home-moon-large" />
     </div>
   );
 }
