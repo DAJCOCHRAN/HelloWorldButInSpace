@@ -78,12 +78,14 @@ nodemon index.js
 ## Contributors
 - **Donald Cochran**
 - **Benjamin Marin**
+  - GitHub: [ben-w-martin](https://github.com/ben-w-martin)
+  - Linkedin: [Benjamin Martin](https://www.linkedin.com/in/ben-w-martin017/)
 - **Giselle Ross:**
-  - Github: [giselleRoss](https://github.com/giselleRoss)
+  - GitHub: [giselleRoss](https://github.com/giselleRoss)
   - Linkedin: [Giselle Ross](https://linkedin.com/in/gisellerosstech)
 - **Alex Amador**
 - **Jeffrey Fung**
-  - Github: [Jeffcodess](https://github.com/Jeffcodess)
+  - GitHub: [Jeffcodess](https://github.com/Jeffcodess)
   - Linkedin: [Jeffrey Fung](https://www.linkedin.com/in/jeffrey-fung-678438bb/)
 
 
