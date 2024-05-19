@@ -23,7 +23,7 @@
 body {
   font-family: var(--font-primary);
   background-color: rgba(17, 17, 17, 0.6);
-  background-image: url(./public/images/space-bg.jpg);
+  background-image: url(/images/space-bg.jpg);
   background-blend-mode: overlay;
   background-size: cover;
   color: var(--color-white);
@@ -251,8 +251,9 @@ body {
 /****************** HOME *********************/
 
 .home-main {
-    height: 85vh;
     padding: 0 0 20px 0;
+    position: relative;
+    overflow: hidden;
 }
 
 .home-container {
@@ -300,16 +301,16 @@ body {
     margin-bottom: 20px;
 }
 
-.home-moon-large {
+.home-moon{
     position: absolute;
-    top: 60%;
+    top: 40%;
     right: -40%;
     z-index: -50;
     filter: brightness(0.1);
 
     animation: rotate 90s linear infinite;
 
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) rotate(0) scale(1);
 }
 
 @media screen and (max-width: 1500px) {
@@ -369,6 +370,10 @@ body {
             "view view"
             "map map"
         ;
+    }
+
+    .home-moon {
+        right: -150%; 
     }
 }
 
