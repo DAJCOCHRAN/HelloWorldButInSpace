@@ -21,7 +21,6 @@ This project consists of two main components: the client and the server. The cli
   - Vite
   - React Router
   - Axios
-  - React Bootstrap
   - ESLint
 
 - **Server:**
@@ -35,6 +34,10 @@ This project consists of two main components: the client and the server. The cli
 ## Client
 
 The client folder contains a React application.
+
+[calcBearing](https://github.com/ben-w-martin/HelloWorldButInSpace/blob/main/client/src/calcBearing.js) uses the client location cooridinates and the current coordinates of the ISS to calculate relative direction, or bearing, from the client's current location.
+
+[calcIsVisible](https://github.com/ben-w-martin/HelloWorldButInSpace/blob/main/client/src/calcIsVisible.js) takes client location and current ISS location and altitude and returns a boolean for whether the ISS is within view from the client's location at that time.
 
 ### Setup
 Fork and clone this repository. Change directories into the client folder
@@ -76,14 +79,14 @@ nodemon index.js
 ```
 
 ## Contributors
-- **Donald Cochran**
-- **Benjamin Marin**
+- **Donald Cochran** - Scrum Master
+- **Benjamin Marin** - Front End
   - GitHub: https://github.com/ben-w-martin
   - LinkedIn: https://www.linkedin.com/in/ben-w-martin017/
-- **Giselle Ross:**
+- **Giselle Ross:** - Back End
   - Github: [giselleRoss](https://github.com/giselleRoss)
   - Linkedin: [Giselle Ross](https://linkedin.com/in/gisellerosstech)
-- **Alex Amador**
+- **Alex Amador** - Design
 - **Jeffrey Fung**
 
 
