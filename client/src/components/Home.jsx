@@ -48,7 +48,7 @@ function Home() {
           <HomeMap center={center} setCenter={setCenter}></HomeMap>
         </div>
         <div className="home-moon">
-          <img src="images/moon.png" alt="moon" className="home-moon__img" />
+          <img src="images/moon.png" alt="moon" />
         </div>
       </main>
     </>
