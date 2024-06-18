@@ -3,7 +3,7 @@ import { issCurrentLocation } from "./iss/iss.js";
 import { getWeather } from "./weather/weather.js";
 import cors from "cors";
 
-const PORT = 8000;
+const PORT = 8080;
 const app = express();
 
 app.use(cors());

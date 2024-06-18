@@ -1,11 +1,11 @@
 import axios from "axios";
 
-const endpoint = "http://localhost:8000/iss";
+const endpoint = import.meta.env.VITE_API_URL;
 
 const currentLocation = () => {
   const config = {
     method: "GET",
-    url: endpoint,
+    url: endpoint + "/iss",
     crossdomain: true,
     headers: { "Content-Type": "application/json" },
   };
